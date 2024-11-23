@@ -69,15 +69,6 @@ namespace Cinema.Web.Site
         protected global::System.Web.UI.WebControls.Button Button2;
 
         /// <summary>
-        /// Button3 элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически созданное поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
-
-        /// <summary>
         /// LinkButton1 элемент управления.
         /// </summary>
         /// <remarks>

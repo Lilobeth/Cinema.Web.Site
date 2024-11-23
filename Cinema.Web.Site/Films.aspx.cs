@@ -20,8 +20,7 @@ namespace Cinema.Web.Site
             JOIN Genre g on f.genreID = g.genreID
             JOIN Country c on f.countryID = c.countryID 
             JOIN Director d on f.directorID = d.directorID 
-            JOIN Age_category ac on f.age_categoryID = ac.age_categoryID ;
-        ";
+            JOIN Age_category ac on f.age_categoryID = ac.age_categoryID;";
 
         private const string SQL_GENRE_OPTIONS = "SELECT DISTINCT genre_name FROM Genre;";
         private const string SQL_COUNTRY_OPTIONS = "SELECT DISTINCT name_of_country FROM Country;";
@@ -41,23 +40,60 @@ namespace Cinema.Web.Site
 
             connection.Close();
         }
-        protected void DropDownList_FilmIndexChanged(object sender, EventArgs e)
-        {
-            DropDownList list = (DropDownList)sender;
-            string value = (string)list.SelectedValue;
 
-            string sqlCmd = sqlALL.Substring(0, sqlALL.Length - 1) + $" WHERE (genre= '{value}');";
+        protected void Genre_search(object sender, EventArgs e)
+        {
+            var value = DropDownList1.SelectedValue;
+            string sqlGenres = sqlALL.Substring(0, sqlALL.Length - 1) + $" WHERE (g.genre_name = '{value}');";
 
             connection.Open();
 
-            SqlCommand cmdDd = new SqlCommand(sqlCmd, connection);
+            SqlCommand cmdDd = new SqlCommand(sqlGenres, connection);
             SqlDataReader readerDd = cmdDd.ExecuteReader();
 
             FilmsGridView.DataSource = readerDd;
             FilmsGridView.DataBind();
 
             connection.Close();
+
         }
+
+        protected void Country_search(object sender, EventArgs e)
+        {
+            var value = DropDownList2.SelectedValue;
+            string sqlCountries = sqlALL.Substring(0, sqlALL.Length - 1) + $" WHERE (c.name_of_country = '{value}');";
+
+            connection.Open();
+
+            SqlCommand cmdDd = new SqlCommand(sqlCountries, connection);
+            SqlDataReader readerDd = cmdDd.ExecuteReader();
+
+            FilmsGridView.DataSource = readerDd;
+            FilmsGridView.DataBind();
+
+            connection.Close();
+
+        }
+
+        protected void Genre_Country_search(object sender, EventArgs e)
+        {
+            var value1 = DropDownList1.SelectedValue;
+            var value2 = DropDownList2.SelectedValue;
+            string sqlCountries = sqlALL.Substring(0, sqlALL.Length - 1) + $" WHERE " +
+                $"(g.genre_name = '{value1}' AND c.name_of_country = '{value2}');";
+
+            connection.Open();
+
+            SqlCommand cmdDd = new SqlCommand(sqlCountries, connection);
+            SqlDataReader readerDd = cmdDd.ExecuteReader();
+
+            FilmsGridView.DataSource = readerDd;
+            FilmsGridView.DataBind();
+
+            connection.Close();
+
+        }
+
 
         protected void Reset_Click(object sender, EventArgs e)
         {

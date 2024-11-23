@@ -13,6 +13,13 @@
         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cinemaConnectionString %>" SelectCommand="SELECT [name_of_country] FROM [Country]"></asp:SqlDataSource>
         
     </p>
+        <p style="text-align: center;">
+        <asp:Button BackColor="White" ForeColor="Black" ID="Button1" runat="server" Text="Поиск по жанру" OnClick="Genre_search"/>
+        <asp:Button BackColor="White" ForeColor="Black" ID="Button2" runat="server" Text="Поиск по стране" OnClick="Country_search"/>
+        <asp:Button BackColor="White" ForeColor="Black" ID="Button3" runat="server" Text="Поиск по жанру и стране" OnClick="Genre_Country_search"/>
+        <asp:Button BackColor="White" ForeColor="Black" ID="ResetButton" runat="server" Text="Сброс" OnClick="Reset_Click"/>
+    </p>
+
     <p style="text-align: center;">
         <asp:GridView ID="FilmsGridView" runat="server" 
             HorizontalAlign="Center"
@@ -22,7 +29,7 @@
             BackColor="White"
             AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="filmID">
             <Columns>
-                <asp:CommandField ShowSelectButton="True" />
+                <asp:CommandField ShowSelectButton="False" />
                 <asp:BoundField DataField="filmID" HeaderText="filmID" InsertVisible="False" ReadOnly="True" SortExpression="filmID" Visible="False" />
                 <asp:BoundField DataField="film_title" HeaderText="Название фильма"/>
                 <asp:BoundField DataField="duration" HeaderText="Длительность" />

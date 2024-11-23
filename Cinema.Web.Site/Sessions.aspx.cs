@@ -19,23 +19,28 @@ namespace Cinema.Web.Site
               Session.session_date,
               Session.start_time,
               Session.session_duration,
-              h.hall_name
+              h.hall_name,
+              g.genre_name as genre,
+	          c.name_of_country as country,
+	          CONCAT(d.director_surname , ' ', d.director_name) as director,
+	          CONCAT(ac.category, '+') as category
             FROM Session
             Inner JOIN Film f on Session.filmID = f.filmID
             Inner JOIN Hall h on Session.hallID = h.hallID
-            ORDER BY session_date;";
+            Inner JOIN Genre g on f.genreID = g.genreID
+            Inner JOIN Country c on f.countryID = c.countryID 
+            Inner JOIN Director d on f.directorID = d.directorID 
+            Inner JOIN Age_category ac on f.age_categoryID = ac.age_categoryID
+            ORDER BY session_date, start_time;";
 
         private const string SQL_SESSION_OPTIONS = "SELECT DISTINCT session_date FROM Session;";
 
         private readonly SqlConnection connection =
             new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            Page_Load(sender, e, DropDownList_Sessions);
-        }
 
-        protected void Page_Load(object sender, EventArgs e, DropDownList DropDownList_Sessions)
+
+        protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack) return;
             connection.Open();
@@ -48,22 +53,12 @@ namespace Cinema.Web.Site
 
             connection.Close();
 
-            connection.Open();
-
-            SqlCommand cmdDd = new SqlCommand(SQL_SESSION_OPTIONS, connection);
-            SqlDataReader readerDd = cmdDd.ExecuteReader();
-
-            DropDownList_Sessions.DataSource = readerDd;
-            DropDownList_Sessions.DataBind();
-
-            connection.Close();
         }
-        protected void DropDownList_SessionDateIndexChanged(object sender, EventArgs e)
+        protected void Date_Check(object sender, EventArgs e)
         {
-            DropDownList list = (DropDownList)sender;
-            string value = (string)list.SelectedValue;
-
-            string sqlCmd = SQL_ALL.Replace("ORDER BY session_date;", "") + $" WHERE (session_date= '{value}');";
+            var value = DropDownList_Sessions.SelectedValue;
+            string sqlCmd = SQL_ALL.Replace("ORDER BY session_date, start_time;", "") + $" WHERE (CONVERT(varchar, session_date, 104) = '{value}')" 
+                + "ORDER BY start_time;";
 
             connection.Open();
 
@@ -86,18 +81,18 @@ namespace Cinema.Web.Site
             SessionsGridView.DataSource = readerDd;
             SessionsGridView.DataBind();
 
-            SessionDetails.DataSource = null;
-            SessionDetails.DataBind();
-
             connection.Close();
         }
 
-        protected void SessionGridView_SelectedIndexChanged(object sender, EventArgs e)
+
+
+
+        protected void SessionsGridView_SelectedIndexChanged(object sender, EventArgs e)
         {
             var list = (GridView)sender;
-            var value = (int)list.SelectedValue;
+            var value = (Guid)list.SelectedValue;
 
-            string sqlSessionByID = SQL_ALL.Replace("ORDER BY session_date;", "") + $" WHERE (sessionID = '{value}');";
+            string sqlSessionByID = SQL_ALL.Replace("ORDER BY session_date, start_time;", "") + $" WHERE (sessionID = '{value}');";
             connection.Open();
 
             SqlCommand cmdDd = new SqlCommand(sqlSessionByID, connection);

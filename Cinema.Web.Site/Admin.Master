@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainPage.master.cs" Inherits="Cinema.Web.Site.MainPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Cinema.Web.Site.Admin" %>
 
 <!DOCTYPE html>
 
@@ -44,7 +44,6 @@
             color: #32144f;
             font-family: Verdana;
         }
-
         button{
             border-radius: 50px;
         }
@@ -55,19 +54,16 @@
             .auto-style9 {
                 width: 84px;
             }
+            .auto-style10 {
+                width: 1038px;
+
+            }
             .auto-style11 {
                 width: 84px;
                 height: 29px;
             }
             .auto-style12 {
                 width: 252px;
-            }
-            .auto-style13 {
-                width: 223px;
-                height: 30px;
-            }
-            .auto-style14 {
-                height: 30px;
             }
     </style>
 
@@ -86,22 +82,18 @@
                         <tr>
                             <td class="auto-style7">Логин</td>
                             <td>
-                                <asp:TextBox ID="TextBox1" runat="server" Width="213px"></asp:TextBox>
+                                <asp:TextBox ID="TextBox1" runat="server" Width="204px"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style13">Пароль</td>
-                            <td class="auto-style14">
-                                <asp:TextBox ID="TextBox2" runat="server" Width="213px"></asp:TextBox>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style7">
-                                <asp:Button ID="Button1" runat="server"  Text="Регистрация" Width="220px" />
-                            </td>
+                            <td class="auto-style7">Пароль</td>
                             <td>
-                                <asp:Button ID="Button2" runat="server" Text="Вход" Width="220px" />
-                                <%--<asp:Button ID="Button3" runat="server" Text="Выход" Width="105px" />--%>
+                                <asp:TextBox ID="TextBox2" runat="server" Width="203px"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Button ID="Button3" runat="server" Text="Выход" Width="105px" />
                             </td>
                         </tr>
                         <tr>
@@ -116,12 +108,12 @@
                     <div style="text-align: center">
                     <table class="auto-style12" width="50%" align="center"  >
                         <tr>
-                            <td style="text-align:center;" >
+                            <td style="text-align:center;">
                                 <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" >Главная</asp:LinkButton>
                             </td>
                         </tr>
                         <tr>
-                            <td style="text-align:center;" >
+                            <td style="text-align:center;">
                                 <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Сеансы</asp:LinkButton>
                             </td>
                         </tr>
@@ -140,6 +132,7 @@
             </tr>
         </table>
     </form>
+
 
 </body>
 </html>
