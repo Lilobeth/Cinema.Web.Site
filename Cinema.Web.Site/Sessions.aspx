@@ -25,7 +25,7 @@
     BackColor="White"
     AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="sessionID" OnSelectedIndexChanged="SessionsGridView_SelectedIndexChanged">
     <Columns>
-     <asp:CommandField ShowSelectButton="True" />
+     <asp:CommandField ShowSelectButton="True" ControlStyle-ForeColor="Black" />
      <asp:BoundField DataField="film_title" HeaderText="Название фильма" />
      <asp:BoundField DataField="sessionID" HeaderText="sessionID" InsertVisible="False" ReadOnly="True" SortExpression="sessionID" Visible="False" />
      <asp:BoundField DataField="session_date" DataFormatString="{0:dd.MM.yyyy}" HtmlEncode="false" HeaderText="Дата сеанса"/>

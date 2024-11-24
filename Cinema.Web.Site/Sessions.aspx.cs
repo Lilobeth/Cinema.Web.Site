@@ -43,6 +43,20 @@ namespace Cinema.Web.Site
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack) return;
+
+            if (Session["UserId"] != null)
+            {
+                var btnField = new ButtonField
+                {
+                    HeaderText = "Купить билеты",
+                    CommandName = "Buy",
+                    Text = "Купить",
+                    Visible = true,
+                };
+
+                SessionsGridView.Columns.Add(btnField);
+            }
+
             connection.Open();
 
             SqlCommand cmd = new SqlCommand(SQL_ALL, connection);
