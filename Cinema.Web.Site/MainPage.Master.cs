@@ -49,6 +49,11 @@ namespace Cinema.Web.Site
             Response.Redirect("RegisterPage.aspx");
         }
 
+        protected void HistoryTicketsPageRedirect(object sender, EventArgs e)
+        {
+            Response.Redirect("HistoryTicketsPage.aspx");
+        }
+
         protected void ProfileBtn_Click(object sender, EventArgs e)
         {
             if (Session["UserId"] is null)

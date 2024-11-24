@@ -68,7 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin.aspx" />
+    <Content Include="BuyTicketInSession.aspx" />
     <Content Include="Films.aspx" />
+    <Content Include="HistoryTicketsPage.aspx" />
     <Content Include="MainPage.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="RegisterPage.aspx" />
@@ -90,12 +92,26 @@
     <Compile Include="Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="BuyTicketInSession.aspx.cs">
+      <DependentUpon>BuyTicketInSession.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BuyTicketInSession.aspx.designer.cs">
+      <DependentUpon>BuyTicketInSession.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Films.aspx.cs">
       <DependentUpon>Films.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Films.aspx.designer.cs">
       <DependentUpon>Films.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryTicketsPage.aspx.cs">
+      <DependentUpon>HistoryTicketsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HistoryTicketsPage.aspx.designer.cs">
+      <DependentUpon>HistoryTicketsPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="MainPage.Master.cs">
       <DependentUpon>MainPage.Master</DependentUpon>

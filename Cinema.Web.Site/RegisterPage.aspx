@@ -102,7 +102,7 @@
                             EnableClientScript="False" 
                             ControlToValidate="PhoneBox" 
                             CssClass="form-error"
-                            ValidationExpression="^((\+7|7|8)+([0-9]){10})$">
+                            ValidationExpression="^((\+1|)+([0-9]){9})$">
                         </asp:RegularExpressionValidator>
                     </td>
                 </tr>

@@ -5,12 +5,12 @@
     <p style="text-align: center;">Фильмы в прокате</p>
     <p style="text-align: center;">
         
-        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="genre_name" DataValueField="genre_name">
+        <asp:DropDownList BackColor="White" ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="genre_name" DataValueField="genre_name">
         </asp:DropDownList>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cinemaConnectionString %>" SelectCommand="SELECT [genre_name] FROM [Genre]"></asp:SqlDataSource>
-        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="name_of_country" DataValueField="name_of_country">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [genre_name] FROM [Genre]"></asp:SqlDataSource>
+        <asp:DropDownList BackColor="White" ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="name_of_country" DataValueField="name_of_country">
         </asp:DropDownList>
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cinemaConnectionString %>" SelectCommand="SELECT [name_of_country] FROM [Country]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [name_of_country] FROM [Country]"></asp:SqlDataSource>
         
     </p>
         <p style="text-align: center;">

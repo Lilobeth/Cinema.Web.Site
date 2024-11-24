@@ -7,9 +7,9 @@
     Сеансы
 </p>
 <p style="text-align:center">
-    <asp:DropDownList ID="DropDownList_Sessions" runat="server" DataSourceID="SqlDataSource1" DataTextField="session_date" DataValueField="session_date">
+    <asp:DropDownList BackColor="White" ID="DropDownList_Sessions" runat="server" DataSourceID="SqlDataSource1" DataTextField="session_date" DataValueField="session_date">
     </asp:DropDownList>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cinemaConnectionString %>" SelectCommand="SELECT DISTINCT CONVERT(varchar, session_date, 104) as 'session_date' FROM [Session]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT DISTINCT CONVERT(varchar, session_date, 104) as 'session_date' FROM [Session]"></asp:SqlDataSource>
     <asp:Button BackColor="White" ForeColor="Black" ID="Button1" runat="server" Text="Поиск" OnClick="Date_Check"/>
     <asp:Button BackColor="White" ForeColor="Black" ID="ResetButton" runat="server" Text="Сброс" OnClick="Reset_Click"/>
 </p>
@@ -21,13 +21,17 @@
     HorizontalAlign="Center"
     CellPadding="8" 
     BorderWidth="2" 
-    ForeColor="#66ffff" 
+    ForeColor="#996633"
     BackColor="White"
+    EditRowStyle-BackColor="#ffccff"
+    AlternatingRowStyle-BackColor="#ffccff"
+    RowStyle-BackColor="#ffccff"
+    OnRowCommand="GridView1_RowCommand"
     AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="sessionID" OnSelectedIndexChanged="SessionsGridView_SelectedIndexChanged">
     <Columns>
      <asp:CommandField ShowSelectButton="True" ControlStyle-ForeColor="Black" />
      <asp:BoundField DataField="film_title" HeaderText="Название фильма" />
-     <asp:BoundField DataField="sessionID" HeaderText="sessionID" InsertVisible="False" ReadOnly="True" SortExpression="sessionID" Visible="False" />
+     <asp:BoundField DataField="sessionID" HeaderText="sessionID" InsertVisible="False" ReadOnly="True" Visible="False" />
      <asp:BoundField DataField="session_date" DataFormatString="{0:dd.MM.yyyy}" HtmlEncode="false" HeaderText="Дата сеанса"/>
      <asp:BoundField DataField="start_time" HeaderText="Время начала сеанса" DataFormatString="{0:hh\:mm}" HtmlEncode="false" />
      <asp:BoundField DataField="session_duration" HeaderText="Длительность" />

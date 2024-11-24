@@ -87,6 +87,9 @@ namespace Cinema.Web.Site
 
         protected void Reset_Click(object sender, EventArgs e)
         {
+            SessionDetails.DataSource = "";
+            SessionDetails.DataBind();
+
             connection.Open();
 
             SqlCommand cmdDd = new SqlCommand(SQL_ALL, connection);
@@ -98,8 +101,24 @@ namespace Cinema.Web.Site
             connection.Close();
         }
 
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (Session["UserId"] == null)
+                return;
 
+            if (e.CommandName == "Buy") // Проверяем, что нажата кнопка "Купить билет"
+            {
+                // Получаем индекс строки, на которой нажата кнопка
+                int rowIndex = Convert.ToInt32(e.CommandArgument);
 
+                // Получаем ID сеанса
+                GridViewRow row = SessionsGridView.Rows[rowIndex];
+
+                string sessionId = SessionsGridView.DataKeys[rowIndex].Value.ToString();
+
+                Response.Redirect($"BuyTicketInSession.aspx?sessionId={sessionId}");
+            }
+        }
 
         protected void SessionsGridView_SelectedIndexChanged(object sender, EventArgs e)
         {

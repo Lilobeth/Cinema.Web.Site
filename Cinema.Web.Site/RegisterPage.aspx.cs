@@ -116,5 +116,13 @@ namespace Cinema.Web.Site
 
             return !reader.Read() ? null : reader;
         }
+
+        public static SqlDataReader CleanExecuteReader(string sqlCommand)
+        {
+            SqlCommand cmd = new SqlCommand(sqlCommand, _connection);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            return reader;
+        }
     }
 }
