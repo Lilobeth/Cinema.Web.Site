@@ -51,8 +51,8 @@ namespace Cinema.Web.Site
             }
 
             var names = NameBox.Text.Split(' ').ToList();
-            var surname = names[0];
-            var name = names[1];
+            var name = names[0];
+            var surname = names[1];
 
             var phone = PhoneBox.Text;
 

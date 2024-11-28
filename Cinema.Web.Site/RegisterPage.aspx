@@ -45,14 +45,14 @@
             <table class="form-table">
                 <tr>
                     <td>
-                        <asp:Label ID="Label1" runat="server" CssClass="form-label">Имя и фамилию</asp:Label>
+                        <asp:Label ID="Label1" runat="server" CssClass="form-label">Имя и фамилия</asp:Label>
                     </td>
                     <td>
                         <asp:TextBox BorderColor="Black" ID="NameBox" runat="server" CssClass="form-input"></asp:TextBox>
                     </td>
                     <td>
                         <asp:RequiredFieldValidator ID="RequiredName" runat="server"
-                            ErrorMessage="Имя | Фамилию обязательно"
+                            ErrorMessage="Имя и фамилия обязательны"
                             EnableClientScript="False"
                             ControlToValidate="NameBox" CssClass="form-error">
                         </asp:RequiredFieldValidator>
@@ -74,7 +74,7 @@
                     </td>
                     <td>
                         <asp:RegularExpressionValidator ID="RequiredEmail" runat="server"
-                            ErrorMessage="Не верный формат почты" 
+                            ErrorMessage="Неверный формат почты" 
                             EnableClientScript="False" 
                             ControlToValidate="EmailBox" 
                             CssClass="form-error"
@@ -98,11 +98,11 @@
                     </td>
                     <td>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
-                            ErrorMessage="Не верный формат мобильного телефона" 
+                            ErrorMessage="Неверный формат мобильного телефона" 
                             EnableClientScript="False" 
                             ControlToValidate="PhoneBox" 
                             CssClass="form-error"
-                            ValidationExpression="^((\+1|)+([0-9]){9})$">
+                            ValidationExpression="^((\+7|)+([0-9]){10})$">
                         </asp:RegularExpressionValidator>
                     </td>
                 </tr>
@@ -143,7 +143,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="Label9" runat="server" CssClass="form-label">Подтверждение пароля</asp:Label>
+                        <asp:Label ID="Label9" runat="server" CssClass="form-label">Пароль еще раз</asp:Label>
                     </td>
                     <td>
                         <asp:TextBox BorderColor="Black" TextMode="Password" ID="ConfirmedPassword" runat="server" CssClass="form-input"></asp:TextBox>

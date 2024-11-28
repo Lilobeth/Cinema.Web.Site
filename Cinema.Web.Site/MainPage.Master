@@ -183,7 +183,7 @@
                            { %>
                             <tr>
                                 <td border="1" width="50%" align="center">
-                                    <asp:LinkButton ID="LinkButton4" runat="server" OnClick="HistoryTicketsPageRedirect">История купленных билетов</asp:LinkButton>
+                                    <asp:LinkButton ID="LinkButton4" runat="server" OnClick="HistoryTicketsPageRedirect">История покупок</asp:LinkButton>
                                 </td>
                             </tr>
                         <% } %>

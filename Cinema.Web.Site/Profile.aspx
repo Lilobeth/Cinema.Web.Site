@@ -51,7 +51,7 @@
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="RequiredName" runat="server"
-                    ErrorMessage="Имя | Фамилию обязательно"
+                    ErrorMessage="Имя и фамилия обязательны"
                     EnableClientScript="False"
                     ControlToValidate="NameBox" CssClass="form-error">
                 </asp:RequiredFieldValidator>

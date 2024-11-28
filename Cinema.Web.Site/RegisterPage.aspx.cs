@@ -49,8 +49,8 @@ namespace Cinema.Web.Site
                 return;
             }
 
-            var surname = names[0];
-            var name = names[1];
+            var name = names[0];
+            var surname = names[1];
             var password = PasswordBox.Text;
 
             var phone = PhoneBox.Text;
@@ -63,7 +63,7 @@ namespace Cinema.Web.Site
 
             if (resultUpdated > 0)
             {
-                Session["LabelMessage"] = "Вы прошли регистрацию. Войдите!";
+                Session["LabelMessage"] = "Вы прошли регистрацию.";
                 Response.Redirect("MainPage.aspx");
             }
             else
