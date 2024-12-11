@@ -99,6 +99,11 @@ namespace Cinema.Web.Site
             Session["UserId"] = id.Value;
             Session["UserName"] = name;
 
+            if(login == "admin" && passwordDb == "admin")
+            {
+                Response.Redirect("Admin.aspx");
+            }
+
             DynamicNameLabel.Text = $"Привет, {Session["UserName"]}!";
 
             LoginLabel.Visible = false;

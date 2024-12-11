@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddTicket.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="BuyTicketInSession.aspx" />
     <Content Include="Films.aspx" />
@@ -78,6 +79,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddTicket.aspx.cs">
+      <DependentUpon>AddTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddTicket.aspx.designer.cs">
+      <DependentUpon>AddTicket.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin.aspx.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
