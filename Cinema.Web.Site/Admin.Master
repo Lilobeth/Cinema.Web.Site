@@ -80,24 +80,17 @@
                 <td class="auto-style3">
                     <table class="auto-style5">
                         <tr>
-                            <td class="auto-style7">Логин</td>
+                            <td class="auto-style7">
+                                <asp:Label ID="AdminLabel" runat="server"></asp:Label>
+                            </td>
                             <td>
-                                <asp:TextBox ID="TextBox1" runat="server" Width="204px"></asp:TextBox>
+                                <asp:Button ID="Button3"  runat="server" Text="Выход" Width="105px" OnClick="Exit_Click" />
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style7">Пароль</td>
-                            <td>
-                                <asp:TextBox ID="TextBox2" runat="server" Width="203px"></asp:TextBox>
+                            <td colspan="2" style="padding: 10px;">
+                                <asp:Label ForeColor="#000000" Font-Size="20px" style="margin-top: 25px;" ID="LabelMessage" runat="server"></asp:Label>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <asp:Button ID="Button3" runat="server" Text="Выход" Width="105px" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style7">&nbsp;</td>
                             <td>&nbsp;</td>
                         </tr>
                     </table>
@@ -114,12 +107,12 @@
                         </tr>
                         <tr>
                             <td style="text-align:center;">
-                                <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Сеансы</asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Управление сеансами</asp:LinkButton>
                             </td>
                         </tr>
                         <tr>
                             <td border="1" width="50%" align="center">
-                                <asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click"  >Фильмы</asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton3" runat="server"  >Управление заявками</asp:LinkButton>
                             </td>
                         </tr>
                     </table>

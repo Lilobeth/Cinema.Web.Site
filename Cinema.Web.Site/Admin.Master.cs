@@ -11,21 +11,30 @@ namespace Cinema.Web.Site
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["UserId"] != null)
+            {
+                AdminLabel.Text = $"Hi, {Session["UserName"]}";
+            }
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MainPage.aspx");
+            Response.Redirect("Admin.aspx");
         }
 
-        protected void LinkButton3_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Films.aspx");
-        }
         protected void LinkButton2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Sessions.aspx");
+            Response.Redirect("AddTicket.aspx");
+        }
+
+        protected void Exit_Click(object sender, EventArgs e)
+        {
+            AdminLabel.Text = "";
+
+            Session.Remove("UserId");
+            Session.Remove("UserName");
+
+            Response.Redirect("MainPage.aspx");
         }
     }
 }

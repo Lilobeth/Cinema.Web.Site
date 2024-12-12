@@ -33,22 +33,13 @@ namespace Cinema.Web.Site
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// TextBox1 элемент управления.
+        /// AdminLabel элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически созданное поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
-
-        /// <summary>
-        /// TextBox2 элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически созданное поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.Label AdminLabel;
 
         /// <summary>
         /// Button3 элемент управления.
@@ -58,6 +49,15 @@ namespace Cinema.Web.Site
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button3;
+
+        /// <summary>
+        /// LabelMessage элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически созданное поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelMessage;
 
         /// <summary>
         /// LinkButton1 элемент управления.
