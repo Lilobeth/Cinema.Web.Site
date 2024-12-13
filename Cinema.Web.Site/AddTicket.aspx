@@ -201,6 +201,7 @@
             EditRowStyle-BackColor="#ffccff"
             AlternatingRowStyle-BackColor="#ffccff"
             RowStyle-BackColor="#ffccff"
+            OnRowCommand="GridViewTickets_RowCommand"
             AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="sessionID" OnSelectedIndexChanged="SessionsGridView_SelectedIndexChanged">
             <Columns>
                  <asp:CommandField ShowSelectButton="True" ControlStyle-ForeColor="Black" />

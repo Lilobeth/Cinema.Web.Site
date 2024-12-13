@@ -70,12 +70,14 @@
     <Content Include="AddTicket.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="BuyTicketInSession.aspx" />
+    <Content Include="ControlTicketClient.aspx" />
     <Content Include="Films.aspx" />
     <Content Include="HistoryTicketsPage.aspx" />
     <Content Include="MainPage.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="RegisterPage.aspx" />
     <Content Include="Sessions.aspx" />
+    <Content Include="TicketsBySessions.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +108,13 @@
     </Compile>
     <Compile Include="BuyTicketInSession.aspx.designer.cs">
       <DependentUpon>BuyTicketInSession.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlTicketClient.aspx.cs">
+      <DependentUpon>ControlTicketClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTicketClient.aspx.designer.cs">
+      <DependentUpon>ControlTicketClient.aspx</DependentUpon>
     </Compile>
     <Compile Include="Films.aspx.cs">
       <DependentUpon>Films.aspx</DependentUpon>
@@ -156,6 +165,13 @@
     </Compile>
     <Compile Include="Sessions.aspx.designer.cs">
       <DependentUpon>Sessions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TicketsBySessions.aspx.cs">
+      <DependentUpon>TicketsBySessions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TicketsBySessions.aspx.designer.cs">
+      <DependentUpon>TicketsBySessions.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

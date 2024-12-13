@@ -42,5 +42,10 @@ namespace Cinema.Web.Site
 
             Response.Redirect("MainPage.aspx");
         }
+
+        protected void LinkButton3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ControlTicketClient.aspx");
+        }
     }
 }

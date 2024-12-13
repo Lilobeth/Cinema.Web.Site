@@ -37,8 +37,18 @@ namespace Cinema.Web.Site
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
+            if (IsPostBack || Session["UserId"] == null)
                 return;
+
+            var btnField = new ButtonField
+            {
+                HeaderText = "Билеты",
+                CommandName = "Tickets",
+                Text = "Список билетов",
+                Visible = true,
+            };
+
+            SessionsGridView.Columns.Add(btnField);
 
             SqlUtils.CompleteConnect(() =>
             {
@@ -46,6 +56,7 @@ namespace Cinema.Web.Site
                 SessionsGridView.DataSource = reader;
                 SessionsGridView.DataBind();
             });
+
 
             SqlUtils.CompleteConnect(() =>
             {
@@ -112,6 +123,25 @@ namespace Cinema.Web.Site
                 SessionsGridView.DataSource = reader;
                 SessionsGridView.DataBind();
             });
+        }
+
+        protected void GridViewTickets_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (Session["UserId"] == null)
+                return;
+
+            if (e.CommandName == "Tickets") 
+            {
+                // Получаем индекс строки, на которой нажата кнопка
+                int rowIndex = Convert.ToInt32(e.CommandArgument);
+
+                // Получаем ID сеанса
+                GridViewRow row = SessionsGridView.Rows[rowIndex];
+
+                string sessionId = SessionsGridView.DataKeys[rowIndex].Value.ToString();
+
+                Response.Redirect($"TicketsBySessions.aspx?sessionId={sessionId}");
+            }
         }
 
         protected void SessionsGridView_SelectedIndexChanged(object sender, EventArgs e)

@@ -112,7 +112,7 @@
                         </tr>
                         <tr>
                             <td border="1" width="50%" align="center">
-                                <asp:LinkButton ID="LinkButton3" runat="server"  >Управление заявками</asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">Управление заявками</asp:LinkButton>
                             </td>
                         </tr>
                     </table>
