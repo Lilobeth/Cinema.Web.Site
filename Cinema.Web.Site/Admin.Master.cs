@@ -15,6 +15,12 @@ namespace Cinema.Web.Site
             {
                 AdminLabel.Text = $"Hi, {Session["UserName"]}";
             }
+
+            if (Session["LabelMessage"] != null)
+            {
+                LabelMessage.Text = Session["LabelMessage"].ToString();
+                Session.Remove("LabelMessage");
+            }
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)

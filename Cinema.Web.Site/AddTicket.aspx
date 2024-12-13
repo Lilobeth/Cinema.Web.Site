@@ -144,7 +144,6 @@
                         <asp:DropDownList
                             ID="DropDownListHall" 
                             runat="server" 
-                            AutoPostBack="True"  
                             DataTextField="HallName" 
                             DataValueField="HallName" 
                             Width="350px"
@@ -214,21 +213,82 @@
             </Columns>
         </asp:GridView>
     </p>
-    <p>
-        <asp:DetailsView ID="SessionDetails" runat="server" 
-            AutoGenerateRows="False" 
-            DataKeyNames="sessionID"  
-            Height="50px" 
-            Width="500px"
-            CellPadding="8"
-            HorizontalAlign="Center">
-            <Fields>
-                <asp:BoundField DataField="genre" HeaderText="Жанр"  />
-                <asp:BoundField DataField="country" HeaderText="Страна"  />
-                <asp:BoundField DataField="director" HeaderText="Режиссер"  />
-                <asp:BoundField DataField="category" HeaderText="Возрастное ограничение" />
-
-            </Fields>
-        </asp:DetailsView>
-    </p>
+    <asp:Panel ID="EditSessionPanel" runat="server" Visible="false">
+        <h4 style="text-align: center;">Редактирование сеанса</h4>
+        <table class="form-table">
+            <tr>
+                <td>
+                    <asp:Label ID="LabelEditFilm" runat="server" CssClass="form-label">Фильм</asp:Label>
+                </td>
+                <td>
+                    <asp:DropDownList
+                        ID="DropDownListEditFilm" 
+                        runat="server" 
+                        DataTextField="FilmName" 
+                        DataValueField="FilmName" 
+                        Width="250px"
+                    />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="LabelEditDate" runat="server" CssClass="form-label">Дата сеанса</asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox BorderColor="Black" TextMode="Date" ID="EditDateSessiontBox" runat="server" CssClass="form-input"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="LabelEditTime" runat="server" CssClass="form-label">Время начала</asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox BorderColor="Black" TextMode="Time" ID="EditTimeBox" runat="server" CssClass="form-input"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="LabelEditDuration" runat="server" CssClass="form-label">Длительность</asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox BorderColor="Black" ID="EditDurationtBox" runat="server" CssClass="form-input"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="LabelEditHall" runat="server" CssClass="form-label">Зал</asp:Label>
+                </td>
+                <td>
+                    <asp:DropDownList
+                        ID="DropDownListEditHall" 
+                        runat="server" 
+                        DataTextField="HallName" 
+                        DataValueField="HallName" 
+                        Width="350px"
+                    />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="LabelEditType" runat="server" CssClass="form-label">Тип сеанса</asp:Label>
+                </td>
+                <td>
+                    <asp:DropDownList
+                        ID="DropDownListEditType" 
+                        runat="server" 
+                        DataTextField="TypeName" 
+                        DataValueField="TypeName" 
+                        Width="300px"
+                    />
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <asp:Button ID="UpdateSessionBtn" runat="server" Text="Обновить" OnClick="UpdateSessionBtn_Click"  CssClass="styled-add-button" />
+                    <asp:Button ID="CancelEditBtn" runat="server" Text="Отмена" OnClick="CancelEdit_Click" CssClass="styled-add-button" />
+                </td>
+            </tr>
+        </table>
+    </asp:Panel>
 </asp:Content>
