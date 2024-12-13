@@ -294,6 +294,24 @@ namespace Cinema.Web.Site
         protected global::System.Web.UI.WebControls.TextBox EditDateSessiontBox;
 
         /// <summary>
+        /// RequiredFieldValidator3 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически созданное поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+
+        /// <summary>
+        /// RegularExpressionValidator2 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически созданное поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
+
+        /// <summary>
         /// LabelEditTime элемент управления.
         /// </summary>
         /// <remarks>
@@ -312,6 +330,15 @@ namespace Cinema.Web.Site
         protected global::System.Web.UI.WebControls.TextBox EditTimeBox;
 
         /// <summary>
+        /// RequiredFieldValidator4 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически созданное поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+
+        /// <summary>
         /// LabelEditDuration элемент управления.
         /// </summary>
         /// <remarks>
@@ -328,6 +355,15 @@ namespace Cinema.Web.Site
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox EditDurationtBox;
+
+        /// <summary>
+        /// RequiredFieldValidator5 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически созданное поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
 
         /// <summary>
         /// LabelEditHall элемент управления.

@@ -237,6 +237,22 @@
                 <td>
                     <asp:TextBox BorderColor="Black" TextMode="Date" ID="EditDateSessiontBox" runat="server" CssClass="form-input"></asp:TextBox>
                 </td>
+                <td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
+                        ErrorMessage="Поле обязательно"
+                        EnableClientScript="False"
+                        ControlToValidate="EditDateSessiontBox" CssClass="form-error">
+                    </asp:RequiredFieldValidator>
+                </td>
+                <td>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server"
+                        ErrorMessage="Не верный формат даты" 
+                        EnableClientScript="False" 
+                        ControlToValidate="EditDateSessiontBox" 
+                        CssClass="form-error"
+                        ValidationExpression="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])">
+                    </asp:RegularExpressionValidator>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -245,13 +261,27 @@
                 <td>
                     <asp:TextBox BorderColor="Black" TextMode="Time" ID="EditTimeBox" runat="server" CssClass="form-input"></asp:TextBox>
                 </td>
+                <td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server"
+                        ErrorMessage="Поле обязательно"
+                        EnableClientScript="False"
+                        ControlToValidate="EditTimeBox" CssClass="form-error">
+                    </asp:RequiredFieldValidator>
+                </td>
             </tr>
             <tr>
                 <td>
                     <asp:Label ID="LabelEditDuration" runat="server" CssClass="form-label">Длительность</asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox BorderColor="Black" ID="EditDurationtBox" runat="server" CssClass="form-input"></asp:TextBox>
+                    <asp:TextBox BorderColor="Black" TextMode="Time" ID="EditDurationtBox" runat="server" CssClass="form-input"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server"
+                        ErrorMessage="Поле обязательно"
+                        EnableClientScript="False"
+                        ControlToValidate="EditDurationtBox" CssClass="form-error">
+                    </asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
