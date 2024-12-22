@@ -50,6 +50,12 @@
             color: #FF3300;
             font-size: 12px;
         }
+        .auto-style13 {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -71,7 +77,7 @@
                         <asp:Label ID="Label1" runat="server" CssClass="form-label">Дата сеанса</asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox BorderColor="Black" TextMode="Date" ID="DateSessiontBox1" runat="server" CssClass="form-input"></asp:TextBox>
+                        <asp:TextBox BorderColor="Black" TextMode="Date" ID="DateSessiontBox1" runat="server" CssClass="auto-style13" Width="335px"></asp:TextBox>
                     </td>
                     <td>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
@@ -82,7 +88,7 @@
                     </td>
                     <td>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
-                            ErrorMessage="Не верный формат даты" 
+                            ErrorMessage="Неверный формат даты" 
                             EnableClientScript="False" 
                             ControlToValidate="DateSessiontBox1" 
                             CssClass="form-error"
@@ -95,7 +101,7 @@
                         <asp:Label ID="Label4" runat="server" CssClass="form-label">Время начала</asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox BorderColor="Black" TextMode="Time" ID="TimeBox" runat="server" CssClass="form-input"></asp:TextBox>
+                        <asp:TextBox BorderColor="Black" TextMode="Time" ID="TimeBox" runat="server" CssClass="auto-style13" Width="335px"></asp:TextBox>
                     </td>
                     <td>
                         <asp:RequiredFieldValidator ID="RequiredDate" runat="server"
@@ -110,7 +116,7 @@
                         <asp:Label ID="Label5" runat="server" CssClass="form-label">Длительность</asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox BorderColor="Black" ID="DurationtBox" TextMode="Time" runat="server" CssClass="form-input"></asp:TextBox>
+                        <asp:TextBox BorderColor="Black" ID="DurationtBox" TextMode="Time" runat="server" CssClass="auto-style13" Width="335px"></asp:TextBox>
                     </td>
                     <td>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
@@ -132,7 +138,7 @@
                             AutoPostBack="True"  
                             DataTextField="FilmName" 
                             DataValueField="FilmName" 
-                            Width="250px"
+                            Width="350px"
                         />   
                     </td>
                 </tr>
@@ -161,7 +167,7 @@
                             AutoPostBack="True"  
                             DataTextField="TypeName" 
                             DataValueField="TypeName" 
-                            Width="300px"
+                            Width="350px"
                         />
                     </td>
                 </tr>
@@ -227,7 +233,7 @@
                         runat="server" 
                         DataTextField="FilmName" 
                         DataValueField="FilmName" 
-                        Width="250px"
+                        Width="350px"
                     />
                 </td>
             </tr>
@@ -236,7 +242,7 @@
                     <asp:Label ID="LabelEditDate" runat="server" CssClass="form-label">Дата сеанса</asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox BorderColor="Black" TextMode="Date" ID="EditDateSessiontBox" runat="server" CssClass="form-input"></asp:TextBox>
+                    <asp:TextBox BorderColor="Black" TextMode="Date" ID="EditDateSessiontBox" runat="server" CssClass="auto-style13" Width="335px"></asp:TextBox>
                 </td>
                 <td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
@@ -247,7 +253,7 @@
                 </td>
                 <td>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server"
-                        ErrorMessage="Не верный формат даты" 
+                        ErrorMessage="Неверный формат даты" 
                         EnableClientScript="False" 
                         ControlToValidate="EditDateSessiontBox" 
                         CssClass="form-error"
@@ -260,7 +266,7 @@
                     <asp:Label ID="LabelEditTime" runat="server" CssClass="form-label">Время начала</asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox BorderColor="Black" TextMode="Time" ID="EditTimeBox" runat="server" CssClass="form-input"></asp:TextBox>
+                    <asp:TextBox BorderColor="Black" TextMode="Time" ID="EditTimeBox" runat="server" CssClass="auto-style13" Width="335px"></asp:TextBox>
                 </td>
                 <td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server"
@@ -275,7 +281,7 @@
                     <asp:Label ID="LabelEditDuration" runat="server" CssClass="form-label">Длительность</asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox BorderColor="Black" TextMode="Time" ID="EditDurationtBox" runat="server" CssClass="form-input"></asp:TextBox>
+                    <asp:TextBox BorderColor="Black" TextMode="Time" ID="EditDurationtBox" runat="server" CssClass="auto-style13" Width="335px"></asp:TextBox>
                 </td>
                 <td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server"
@@ -309,7 +315,7 @@
                         runat="server" 
                         DataTextField="TypeName" 
                         DataValueField="TypeName" 
-                        Width="300px"
+                        Width="350px"
                     />
                 </td>
             </tr>

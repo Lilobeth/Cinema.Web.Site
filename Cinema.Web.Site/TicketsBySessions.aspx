@@ -128,7 +128,7 @@
                 AutoGenerateColumns="False" 
                 DataKeyNames="ticket_id">
             <Columns>
-                <asp:CommandField ShowSelectButton="True" ControlStyle-ForeColor="Black" SelectText="Выбор" />
+                <asp:CommandField ShowSelectButton="False" ControlStyle-ForeColor="Black" SelectText="Выбор" />
                 <asp:BoundField DataField="ticket_id" HeaderText="ID Билета" InsertVisible="False" ReadOnly="True" Visible="False" />
                 <asp:BoundField DataField="seat" HeaderText="Место" />
                 <asp:BoundField DataField="price" HeaderText="Цена" DataFormatString="{0:C}" HtmlEncode="false" />
